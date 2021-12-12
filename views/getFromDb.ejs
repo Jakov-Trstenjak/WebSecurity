@@ -1,0 +1,12 @@
+tx.executeSql('SELECT * FROM PRODUCT', [], function (tx, results) {
+    var len = results.rows.length, i;
+    msg = "<p>Found rows: " + len + "</p>";
+
+    console.log(msg)
+   
+    for (i = 0; i < len; i++) {
+        msg += "<p><b>" + results.rows.item(i).Name + "</b></p>";
+    }
+    console.log(msg)
+
+}, null);
